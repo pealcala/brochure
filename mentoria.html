@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentoría y Acompañamiento - Pedro D. Alcalá R.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg-inner {
+            background-color: #1a202c;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-gray-900">
+                    <a href="index.html">Pedro D. Alcalá R.</a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#about" class="text-gray-600 hover:text-blue-600 transition duration-300">Sobre Mí</a>
+                    <a href="index.html#services" class="text-gray-600 hover:text-blue-600 transition duration-300">Servicios</a>
+                    <a href="index.html#portfolio" class="text-gray-600 hover:text-blue-600 transition duration-300">Portafolio</a>
+                    <a href="mailto:pedroalcalarojas@gmail.com" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300 shadow">Contactar</a>
+                </nav>
+                 <button id="mobile-menu-button" class="md:hidden text-gray-800">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="index.html#about" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Sobre Mí</a>
+            <a href="index.html#services" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Servicios</a>
+            <a href="index.html#portfolio" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Portafolio</a>
+            <a href="mailto:pedroalcalarojas@gmail.com" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">Contactar</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg-inner text-white pt-24 pb-16">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-3xl md:text-5xl font-black leading-tight mb-3">De <strong>Desafíos a Soluciones</strong>: Acompañamiento Analítico Experto</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">Un socio estratégico a tu lado para superar cualquier obstáculo técnico o estratégico en tu camino.</p>
+            </div>
+        </section>
+
+        <!-- Introductory Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                 <div class="text-center max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Acelera tu <strong>Curva de Aprendizaje</strong> y la <strong>Resolución de Problemas</strong></h2>
+                    <p class="text-gray-600 mt-6 text-lg">La mentoría no es una clase, es un <strong>atajo hacia la experiencia</strong>. A través de sesiones personalizadas, te ayudo a resolver problemas específicos que te tienen estancado, a tomar decisiones de diseño correctas desde el principio y a aplicar las mejores prácticas que de otra manera tomaría años aprender. Ahorra tiempo, evita frustraciones y entrega resultados de <strong>mayor impacto</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mentoring Areas Section -->
+        <section id="areas" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Áreas de <strong>Acompañamiento</strong></h2>
+                    <p class="text-gray-600 mt-4 max-w-3xl mx-auto">Desde la base técnica hasta la visión estratégica, cubrimos todo el espectro del análisis de datos.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Dominio Técnico con Power BI -->
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                            Dominio Técnico en Power BI
+                        </h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start"><span class="text-blue-500 mr-2">&#10003;</span> <span><strong>Enseñanza paso a paso</strong> para dominar la herramienta desde cero.</span></li>
+                            <li class="flex items-start"><span class="text-blue-500 mr-2">&#10003;</span> <span>Resolución de casos complejos de <strong>conexión y modelado de datos</strong> (Power Query).</span></li>
+                            <li class="flex items-start"><span class="text-blue-500 mr-2">&#10003;</span> <span>Creación de <strong>cálculos avanzados y lógicas de negocio</strong> con DAX.</span></li>
+                            <li class="flex items-start"><span class="text-blue-500 mr-2">&#10003;</span> <span>Estrategias para <strong>publicación y despliegue</strong> en el servicio de Power BI.</span></li>
+                            <li class="flex items-start"><span class="text-blue-500 mr-2">&#10003;</span> <span>Configuración y troubleshooting de <strong>actualizaciones automáticas</strong> (Gateway).</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Visión Estratégica y Analítica -->
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                            Visión Estratégica y Analítica
+                        </h3>
+                        <ul class="space-y-3 text-gray-600">
+                           <li class="flex items-start"><span class="text-blue-500 mr-2">&#10003;</span> <span>Definición de <strong>KPIs relevantes</strong> que realmente midan el pulso del negocio.</span></li>
+                           <li class="flex items-start"><span class="text-blue-500 mr-2">&#10003;</span> <span>Diseño de la <strong>arquitectura de datos</strong> para soluciones escalables y eficientes.</span></li>
+                           <li class="flex items-start"><span class="text-blue-500 mr-2">&#10003;</span> <span>Técnicas para la <strong>interpretación de resultados</strong> y la generación de insights valiosos.</span></li>
+                           <li class="flex items-start"><span class="text-blue-500 mr-2">&#10003;</span> <span>Aplicación de metodologías como el <strong>Análisis de Causa Raíz</strong> para guiar la toma de decisiones.</span></li>
+                           <li class="flex items-start"><span class="text-blue-500 mr-2">&#10003;</span> <span>Fomento del <strong>pensamiento crítico</strong> para cuestionar los datos y encontrar la verdad oculta.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- How it Works Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12">¿Cómo Funciona el Proceso?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    <div class="border-t-4 border-blue-600 bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-bold text-xl mb-2">1. Sesión de Diagnóstico</h3>
+                        <p class="text-gray-600">Analizamos juntos tu desafío específico, tus objetivos y el contexto de tu proyecto o necesidad de aprendizaje.</p>
+                    </div>
+                    <div class="border-t-4 border-blue-600 bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-bold text-xl mb-2">2. Plan de Acción Personalizado</h3>
+                        <p class="text-gray-600">Definimos una hoja de ruta con los temas a tratar y los resultados esperados para cada sesión.</p>
+                    </div>
+                     <div class="border-t-4 border-blue-600 bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-bold text-xl mb-2">3. Sesiones Prácticas 1 a 1</h3>
+                        <p class="text-gray-600">Trabajamos directamente sobre tu caso de uso, resolviendo problemas en tiempo real y construyendo la solución.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-900 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold">Desbloquea tu Potencial Analítico</h2>
+                <p class="text-gray-300 my-6 max-w-2xl mx-auto">¿Tienes un reto entre manos o quieres llevar tus habilidades al siguiente nivel? Conversemos.</p>
+                <a href="mailto:pedroalcalarojas@gmail.com" class="bg-white text-blue-600 text-lg font-semibold px-8 py-3 rounded-md hover:bg-gray-200 transition duration-300 shadow-lg transform hover:scale-105">Agendar una Sesión Inicial</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Pedro D. Alcalá R. Todos los derechos reservados.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="https://www.linkedin.com/in/pedro-daniel-alcala-rojas/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">LinkedIn</a>
+                <a href="https://www.udemy.com/user/pedro-alcala-2/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">Udemy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
