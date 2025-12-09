@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos y Test Dinámico: Pensamiento Crítico | Pedro D. Alcalá R.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #111827;
+            background-image: radial-gradient(circle at 1px 1px, #374151 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        /* Animaciones para el Test */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media print {
+            .no-print { display: none; }
+            .print-only { display: block; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm no-print">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-gray-900">
+                    <a href="index.html">Pedro D. Alcalá R.</a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#test-interactivo" class="text-blue-600 font-semibold hover:text-blue-800 transition">Ir al Test de Diagnóstico</a>
+                    <a href="https://pealcala.github.io/brochure/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300 shadow">Ver Brochure</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="hero-bg text-white pt-32 pb-16 no-print">
+            <div class="container mx-auto px-6 text-center">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-900 text-blue-200 text-sm font-semibold mb-4">Material Exclusivo del Curso</span>
+                <h1 class="text-3xl md:text-5xl font-black leading-tight mb-4">Kit de Herramientas del Pensador Crítico</h1>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
+                    Recursos clave, guías visuales y un <strong>Test de Diagnóstico Interactivo</strong> que se renueva en cada intento.
+                </p>
+                <a href="#test-interactivo" class="inline-block bg-white text-gray-900 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition shadow-lg">
+                    Comenzar Test Ahora 👇
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección 1: Sesgos -->
+        <section id="sesgos" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">1. Detectives del Pensamiento</h2>
+                    <p class="text-gray-600 mt-2">Identificando Sesgos y Falacias Comunes</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200 shadow-sm">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 text-blue-600">Sesgo de Confirmación</h3>
+                        <p class="text-gray-600 mb-4">Buscar solo información que confirma nuestras creencias.</p>
+                        <p class="text-sm text-gray-500 italic border-l-2 border-blue-400 pl-3">Ejemplo: Solo leer noticias que apoyan tu opinión política.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200 shadow-sm">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 text-blue-600">Sesgo de Disponibilidad</h3>
+                        <p class="text-gray-600 mb-4">Dar más peso a lo que recordamos fácilmente o es reciente.</p>
+                        <p class="text-sm text-gray-500 italic border-l-2 border-blue-400 pl-3">Ejemplo: Temer volar tras ver una noticia de accidente.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200 shadow-sm">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 text-red-500">Falacia Ad Hominem</h3>
+                        <p class="text-gray-600 mb-4">Atacar a la persona en lugar de refutar su argumento.</p>
+                        <p class="text-sm text-gray-500 italic border-l-2 border-red-400 pl-3">Ejemplo: "Tu plan no sirve porque vistes mal".</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg border border-gray-200 shadow-sm">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 text-red-500">Hombre de Paja</h3>
+                        <p class="text-gray-600 mb-4">Distorsionar el argumento del oponente para atacarlo fácil.</p>
+                        <p class="text-sm text-gray-500 italic border-l-2 border-red-400 pl-3">Ejemplo: "¿Invertir en renovables? ¡Quieres que volvamos a las cavernas!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Checklist CRAAP -->
+        <section id="fuentes" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">2. Evaluar Fuentes (CRAAP)</h2>
+                    <p class="text-gray-600 mt-2">La herramienta definitiva contra las Fake News</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden grid grid-cols-2 md:grid-cols-5 divide-x divide-gray-100">
+                    <div class="p-4 text-center hover:bg-blue-50 transition"><div class="text-2xl font-black text-blue-600">C</div><div class="font-bold text-sm">Currency</div><div class="text-xs text-gray-500 mt-1">Actualidad</div></div>
+                    <div class="p-4 text-center hover:bg-blue-50 transition"><div class="text-2xl font-black text-blue-600">R</div><div class="font-bold text-sm">Relevance</div><div class="text-xs text-gray-500 mt-1">Relevancia</div></div>
+                    <div class="p-4 text-center hover:bg-blue-50 transition"><div class="text-2xl font-black text-blue-600">A</div><div class="font-bold text-sm">Authority</div><div class="text-xs text-gray-500 mt-1">Autoridad</div></div>
+                    <div class="p-4 text-center hover:bg-blue-50 transition"><div class="text-2xl font-black text-blue-600">A</div><div class="font-bold text-sm">Accuracy</div><div class="text-xs text-gray-500 mt-1">Exactitud</div></div>
+                    <div class="p-4 text-center hover:bg-blue-50 transition col-span-2 md:col-span-1"><div class="text-2xl font-black text-blue-600">P</div><div class="font-bold text-sm">Purpose</div><div class="text-xs text-gray-500 mt-1">Propósito</div></div>
+                </div>
+                <div class="mt-8 text-center">
+                    <a href="https://en.wikipedia.org/wiki/CRAAP_test" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-blue-600 font-semibold hover:underline">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        Referencia: Wikipedia sobre el Test CRAAP
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE TEST INTERACTIVO -->
+        <section id="test-interactivo" class="py-20 bg-blue-900 text-white relative overflow-hidden">
+            <!-- Decorative Background Element -->
+            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                <svg width="100%" height="100%">
+                    <pattern id="pattern-circles" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <circle cx="2" cy="2" r="1" fill="#fff"></circle>
+                    </pattern>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)"></rect>
+                </svg>
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold">3. Test de Autodiagnóstico</h2>
+                    <p class="text-blue-200 mt-4 max-w-2xl mx-auto">Pon a prueba lo aprendido. Cada intento presenta <strong>10 preguntas diferentes</strong> seleccionadas al azar de nuestro banco de ejercicios.</p>
+                </div>
+
+                <!-- Contenedor del Quiz -->
+                <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden text-gray-800">
+                    
+                    <!-- Pantalla de Inicio del Quiz -->
+                    <div id="quiz-start" class="p-10 text-center">
+                        <div class="mb-6">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Banco de Preguntas Dinámico</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">¿Estás listo para el desafío?</h3>
+                        <p class="text-gray-600 mb-8">Este test seleccionará aleatoriamente 10 situaciones del curso para evaluar tu pensamiento crítico y mentalidad de crecimiento. ¡Ningún intento es igual al anterior!</p>
+                        <button onclick="startQuiz()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 shadow-md">
+                            Iniciar Test
+                        </button>
+                    </div>
+
+                    <!-- Pantalla de Preguntas (Oculta al inicio) -->
+                    <div id="quiz-question" class="hidden p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm font-semibold text-blue-600" id="question-counter">Pregunta 1/10</span>
+                            <div class="w-1/2 bg-gray-200 rounded-full h-2.5">
+                                <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full" style="width: 10%"></div>
+                            </div>
+                        </div>
+                        
+                        <h4 id="question-text" class="text-xl font-bold mb-6 text-gray-900">Texto de la pregunta...</h4>
+                        
+                        <div id="options-container" class="space-y-3">
+                            <!-- Las opciones se generan con JS -->
+                        </div>
+                    </div>
+
+                    <!-- Pantalla de Resultados (Oculta al inicio) -->
+                    <div id="quiz-result" class="hidden p-10 text-center fade-in">
+                        <div class="inline-block p-4 rounded-full bg-blue-50 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Tu Resultado</h3>
+                        <div class="text-5xl font-black text-blue-600 mb-4" id="final-score">0%</div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4" id="result-title">Título del Nivel</h4>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg text-left mb-6 border border-gray-200">
+                            <p id="result-feedback" class="text-gray-700 text-sm leading-relaxed">Feedback detallado...</p>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-4 justify-center">
+                            <button onclick="window.print()" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-6 rounded-lg transition no-print">
+                                🖨️ Guardar PDF
+                            </button>
+                            <button onclick="restartQuiz()" class="bg-white border border-gray-300 text-gray-700 font-semibold py-2 px-6 rounded-lg hover:bg-gray-50 transition no-print">
+                                Intentar de Nuevo (Nuevas Preguntas)
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800 no-print">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-6">
+                <p class="text-gray-400 text-sm uppercase tracking-wider mb-2">Material Complementario del Curso</p>
+                <h3 class="text-2xl font-bold text-white">"Pensamiento Crítico y Mentalidad de Crecimiento: Éxito"</h3>
+            </div>
+
+            <div class="mb-8">
+                <a href="https://www.udemy.com/course/pensamiento-critico-y-mentalidad-de-crecimiento-exito/" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md transition duration-300 shadow-lg">
+                    Ir al Curso Completo en Udemy
+                </a>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-gray-500 text-sm">
+                <p class="mb-2">Dictado por <a href="https://www.linkedin.com/in/pedro-daniel-alcala-rojas/" target="_blank" rel="noopener noreferrer" class="font-bold hover:text-blue-400 transition">Pedro Alcalá</a></p>
+                <p>&copy; 2025 Pedro D. Alcalá R. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LÓGICA DEL TEST -->
+    <script>
+        // BANCO COMPLETO DE 20 PREGUNTAS
+        const allQuestionsDB = [
+            // --- Preguntas Originales (1-10) ---
+            {
+                text: "1. Recibes un email de tu jefe: 'Necesito el informe conciso'. Borras todos los detalles y dejas 3 líneas. Él se molesta. ¿Qué falló?",
+                options: [
+                    { text: "Lógica: Razonamiento incorrecto.", score: 0 },
+                    { text: "Claridad: Interpretación superficial, faltaron preguntas aclaratorias.", score: 10 },
+                    { text: "Amplitud: No consultaste a otros.", score: 0 }
+                ]
+            },
+            {
+                text: "2. Mensaje de marketing: 'La solución sinérgica que optimiza tu paradigma'. ¿Qué problema identificas?",
+                options: [
+                    { text: "Falta de Claridad: Jerga vacía y poca especificidad.", score: 10 },
+                    { text: "Falta de Lógica.", score: 0 },
+                    { text: "Es un buen mensaje.", score: 0 }
+                ]
+            },
+            {
+                text: "3. Entrevistas a 'Carlos'. Te cae bien al instante e ignoras sus respuestas vagas posteriores. ¿Qué sesgo es?",
+                options: [
+                    { text: "Hombre de Paja.", score: 0 },
+                    { text: "Sesgo de Confirmación/Favoritismo.", score: 10 },
+                    { text: "Sesgo de Disponibilidad.", score: 0 }
+                ]
+            },
+            {
+                text: "4. 'Todas las empresas que vuelven a la oficina mejoran. Nosotros volveremos, así que mejoraremos'. ¿Qué argumento es?",
+                options: [
+                    { text: "Inductivo (Patrones).", score: 0 },
+                    { text: "Deductivo (General a específico).", score: 10 },
+                    { text: "Abductivo (Hipótesis).", score: 0 }
+                ]
+            },
+            {
+                text: "5. Un sitio web se ve profesional pero no tiene autor, es nuevo y vende un solo producto. ¿Qué falla en CRAAP?",
+                options: [
+                    { text: "Relevancia.", score: 0 },
+                    { text: "Autoridad y Propósito.", score: 10 },
+                    { text: "Claridad.", score: 0 }
+                ]
+            },
+            {
+                text: "6. Ventas bajan (dato cuantitativo). Clientes se quejan de atención (dato cualitativo). ¿Qué haces?",
+                options: [
+                    { text: "Ignorar las quejas por subjetivas.", score: 0 },
+                    { text: "Triangular datos: Usar lo cualitativo para explicar el dato numérico.", score: 10 },
+                    { text: "Confiar en la intuición.", score: 0 }
+                ]
+            },
+            {
+                text: "7. Ventas culpa a Logística. Logística culpa a Compras. Nadie ve el todo. ¿Qué falta?",
+                options: [
+                    { text: "Pensamiento Creativo.", score: 0 },
+                    { text: "Pensamiento Sistémico.", score: 10 },
+                    { text: "Más disciplina.", score: 0 }
+                ]
+            },
+            {
+                text: "8. Tienes que elegir expansión A o B. No hay datos claros. ¿Qué es lo más racional?",
+                options: [
+                    { text: "Elegir por instinto.", score: 0 },
+                    { text: "Posponer y hacer estudio de mercado para reducir incertidumbre.", score: 10 },
+                    { text: "Lanzar una moneda.", score: 0 }
+                ]
+            },
+            {
+                text: "9. Lluvia de ideas para innovar. Se aceptan 'ideas locas' sin juzgar. ¿Qué pensamiento es?",
+                options: [
+                    { text: "Pensamiento Crítico (Convergente).", score: 0 },
+                    { text: "Pensamiento Creativo (Divergente).", score: 10 },
+                    { text: "Pensamiento Lógico.", score: 0 }
+                ]
+            },
+            {
+                text: "10. Recibes críticas duras. Piensas: '¿Qué puedo aprender de esto para mejorar?'. ¿Qué es?",
+                options: [
+                    { text: "Mentalidad Fija.", score: 0 },
+                    { text: "Mentalidad de Crecimiento.", score: 10 },
+                    { text: "Resignación.", score: 0 }
+                ]
+            },
+            // --- Nuevas Preguntas (11-20) ---
+            {
+                text: "11. En una reunión, nadie se atreve a contradecir al jefe aunque su idea sea mala para evitar conflictos. ¿Qué obstáculo es?",
+                options: [
+                    { text: "Pensamiento de Grupo (Groupthink).", score: 10 },
+                    { text: "Sesgo de Anclaje.", score: 0 },
+                    { text: "Falacia de la Pendiente Resbaladiza.", score: 0 }
+                ]
+            },
+            {
+                text: "12. Tienes un problema complejo y saltas inmediatamente a probar soluciones al azar. ¿Qué paso del marco de resolución omitiste?",
+                options: [
+                    { text: "Generar Soluciones.", score: 0 },
+                    { text: "Definir el Problema con Claridad.", score: 10 },
+                    { text: "Implementar.", score: 0 }
+                ]
+            },
+            {
+                text: "13. Al analizar una fuente, ves que la información es de hace 10 años en un sector tecnológico. ¿Qué criterio de CRAAP falla?",
+                options: [
+                    { text: "Actualidad (Currency).", score: 10 },
+                    { text: "Autoridad.", score: 0 },
+                    { text: "Exactitud.", score: 0 }
+                ]
+            },
+            {
+                text: "14. Un líder admite que se equivocó en una proyección y propone un plan para corregirlo. ¿Qué demuestra?",
+                options: [
+                    { text: "Debilidad y falta de preparación.", score: 0 },
+                    { text: "Humildad intelectual y Mentalidad de Crecimiento.", score: 10 },
+                    { text: "Falta de pensamiento crítico.", score: 0 }
+                ]
+            },
+            {
+                text: "15. Usas una Matriz de Decisión para ponderar pros y contras con puntajes. ¿Qué estás buscando?",
+                options: [
+                    { text: "Eliminar toda emoción de la vida.", score: 0 },
+                    { text: "Toma de Decisiones Racionales y objetivas.", score: 10 },
+                    { text: "Aumentar la incertidumbre.", score: 0 }
+                ]
+            },
+            {
+                text: "16. 'El suelo está mojado. Pudo llover o alguien regó. Como está nublado, lo más probable es que llovió'. ¿Qué argumento es?",
+                options: [
+                    { text: "Deductivo.", score: 0 },
+                    { text: "Abductivo (Inferencia a la mejor explicación).", score: 10 },
+                    { text: "Falacia Ad Hominem.", score: 0 }
+                ]
+            },
+            {
+                text: "17. Tu equipo soluciona un retraso en producción acelerando las máquinas, pero esto causa más fallos de calidad después. Fallaron en:",
+                options: [
+                    { text: "Ver las consecuencias sistémicas (efectos de segundo orden).", score: 10 },
+                    { text: "Ser suficientemente rápidos.", score: 0 },
+                    { text: "Motivación del personal.", score: 0 }
+                ]
+            },
+            {
+                text: "18. Te niegas a aprender una nueva herramienta porque 'ya eres viejo para eso'. Esto es un ejemplo de:",
+                options: [
+                    { text: "Prudencia.", score: 0 },
+                    { text: "Mentalidad Fija (Creencia limitante).", score: 10 },
+                    { text: "Pensamiento Crítico.", score: 0 }
+                ]
+            },
+            {
+                text: "19. Para evaluar el éxito de un proyecto, defines métricas vagas como 'que a la gente le guste'. Falla el pilar de:",
+                options: [
+                    { text: "Precisión.", score: 10 },
+                    { text: "Amplitud.", score: 0 },
+                    { text: "Lógica.", score: 0 }
+                ]
+            },
+            {
+                text: "20. Ves una oferta que dice '50% de descuento solo por hoy'. Compras sin pensar si lo necesitas. ¿Qué sesgo explotaron?",
+                options: [
+                    { text: "Escasez / Urgencia (que nubla el juicio crítico).", score: 10 },
+                    { text: "Sesgo de Confirmación.", score: 0 },
+                    { text: "Falacia del Hombre de Paja.", score: 0 }
+                ]
+            }
+        ];
+
+        let currentQuestionsSession = [];
+        let currentQIndex = 0;
+        let score = 0;
+
+        // Elementos DOM
+        const quizStart = document.getElementById('quiz-start');
+        const quizQuestion = document.getElementById('quiz-question');
+        const quizResult = document.getElementById('quiz-result');
+        
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const progressText = document.getElementById('question-counter');
+        const progressBar = document.getElementById('progress-bar');
+
+        const finalScore = document.getElementById('final-score');
+        const resultTitle = document.getElementById('result-title');
+        const resultFeedback = document.getElementById('result-feedback');
+
+        function startQuiz() {
+            // Seleccionar 10 preguntas aleatorias
+            currentQuestionsSession = allQuestionsDB
+                .sort(() => 0.5 - Math.random()) // Mezclar array
+                .slice(0, 10); // Tomar las primeras 10
+
+            score = 0;
+            currentQIndex = 0;
+            
+            quizStart.classList.add('hidden');
+            quizQuestion.classList.remove('hidden');
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const q = currentQuestionsSession[currentQIndex];
+            
+            // Actualizar UI
+            questionText.textContent = q.text;
+            progressText.textContent = `Pregunta ${currentQIndex + 1}/10`;
+            progressBar.style.width = `${((currentQIndex + 1) / 10) * 100}%`;
+            
+            // Limpiar opciones
+            optionsContainer.innerHTML = '';
+
+            // Generar botones
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-lg border border-gray-200 hover:bg-blue-50 hover:border-blue-300 transition duration-200 flex items-center group";
+                btn.innerHTML = `
+                    <span class="w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center mr-3 group-hover:border-blue-500 group-hover:text-blue-500 text-xs font-bold text-gray-400">${String.fromCharCode(65 + idx)}</span>
+                    <span class="text-gray-700 font-medium group-hover:text-blue-900">${opt.text}</span>
+                `;
+                btn.onclick = () => selectOption(opt.score);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectOption(points) {
+            score += points;
+            currentQIndex++;
+            
+            if (currentQIndex < 10) {
+                // Pequeña animación de transición
+                quizQuestion.classList.add('opacity-50');
+                setTimeout(() => {
+                    loadQuestion();
+                    quizQuestion.classList.remove('opacity-50');
+                }, 200);
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            quizQuestion.classList.add('hidden');
+            quizResult.classList.remove('hidden');
+            
+            finalScore.textContent = `${score}%`;
+            
+            let title = "";
+            let feedback = "";
+
+            if (score <= 50) {
+                title = "Nivel: Aprendiz Reflexivo";
+                feedback = `<strong>Diagnóstico:</strong> Estás comenzando. Tienes intuición, pero a menudo caes en trampas mentales.<br><br><strong>Recomendación:</strong> Revisa urgentemente el <strong>Módulo 1</strong> (Claridad) y la lista de Sesgos Cognitivos. Aplica la "Pausa Reflexiva" antes de decidir.`;
+                finalScore.classList.replace('text-blue-600', 'text-yellow-600');
+            } else if (score <= 80) {
+                title = "Nivel: Pensador en Desarrollo";
+                feedback = `<strong>Diagnóstico:</strong> Tienes bases sólidas. Entiendes la lógica, pero puedes mejorar en la visión sistémica.<br><br><strong>Recomendación:</strong> Refuerza el <strong>Módulo 2</strong> (Argumentos) y practica la Triangulación de Datos.`;
+                finalScore.classList.replace('text-blue-600', 'text-blue-500');
+            } else {
+                title = "Nivel: Estratega Crítico";
+                feedback = `<strong>Diagnóstico:</strong> ¡Excelente! Demuestras mentalidad de crecimiento y uso avanzado de herramientas analíticas.<br><br><strong>Recomendación:</strong> Enfócate en el <strong>Módulo 4 (Innovación)</strong> y lidera la resolución de problemas en tu equipo.`;
+                finalScore.classList.replace('text-blue-600', 'text-green-600');
+            }
+
+            resultTitle.textContent = title;
+            resultFeedback.innerHTML = feedback;
+        }
+
+        function restartQuiz() {
+            finalScore.className = "text-5xl font-black text-blue-600 mb-4"; // Reset color
+            quizResult.classList.add('hidden');
+            startQuiz(); // Inicia un nuevo test con preguntas mezcladas nuevamente
+        }
+    </script>
+</body>
+</html>
