@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico de Adopción IA - Pedro D. Alcalá R.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #111827;
+            background-image: radial-gradient(circle at 1px 1px, #374151 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        .option-btn:hover {
+            transform: translateY(-2px);
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Header / Navigation (Consistent with Index) -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-gray-900">
+                    <a href="index.html">Pedro D. Alcalá R.</a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#test-start" class="text-blue-600 font-bold transition duration-300 hover:text-blue-800">Test IA</a>
+                    <a href="https://pealcala.github.io/brochure/" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300 shadow">Contactar</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden text-gray-800">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="index.html" class="block py-3 px-6 text-sm text-gray-700 hover:bg-gray-100">Inicio</a>
+            <a href="#test-start" class="block py-3 px-6 text-sm font-bold text-blue-600 bg-blue-50">Test IA</a>
+            <a href="https://pealcala.github.io/brochure/" target="_blank" class="block py-3 px-6 text-sm text-gray-700 hover:bg-gray-100">Contactar</a>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-24 pb-12">
+        
+        <!-- Intro Section -->
+        <section id="test-start" class="container mx-auto px-6 mb-10 text-center scroll-mt-28">
+            <h1 class="text-3xl md:text-5xl font-black text-gray-900 mb-4">Diagnóstico de Madurez en IA Generativa</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Basado en el <a href="https://es.wikipedia.org/wiki/Modelo_de_aceptaci%C3%B3n_tecnol%C3%B3gica" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 transition-colors">Modelo de Aceptación Tecnológica (TAM)</a> y principios de Prompt Engineering. 
+                Este test evaluará tu capacidad para integrar herramientas como ChatGPT, Copilot y Gemini en flujos de trabajo profesionales.
+            </p>
+        </section>
+
+        <!-- Quiz Container -->
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100 min-h-[500px] flex flex-col relative">
+                
+                <!-- Loading / Progress Bar -->
+                <div class="h-2 bg-gray-100 w-full">
+                    <div id="progress-bar" class="h-full bg-blue-600 transition-all duration-500 w-0"></div>
+                </div>
+
+                <div class="p-8 flex-grow flex flex-col justify-center" id="quiz-content">
+                    
+                    <!-- View: Start Screen -->
+                    <div id="start-screen" class="text-center fade-in">
+                        <div class="mb-6 inline-block p-4 rounded-full bg-blue-50 text-blue-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold mb-4">¿Qué tan preparado estás para la era de la IA?</h2>
+                        <p class="text-gray-600 mb-8">
+                            Responderás <strong>10 preguntas aleatorias</strong> de nuestro banco de situaciones profesionales. 
+                            Analizaremos tu comprensión técnica, ética y estratégica.
+                        </p>
+                        <button onclick="startQuiz()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-lg transform hover:scale-105">
+                            Comenzar Diagnóstico
+                        </button>
+                    </div>
+
+                    <!-- View: Question Screen -->
+                    <div id="question-screen" class="hidden fade-in">
+                        <div class="flex justify-between items-center mb-6 text-sm text-gray-400 font-semibold uppercase tracking-wider">
+                            <span id="question-counter">Pregunta 1/10</span>
+                            <span id="topic-tag" class="text-blue-600 bg-blue-50 px-2 py-1 rounded text-xs">Tema</span>
+                        </div>
+                        
+                        <h3 id="question-text" class="text-xl md:text-2xl font-bold text-gray-800 mb-8 leading-relaxed">
+                            <!-- Question goes here -->
+                        </h3>
+
+                        <div id="options-container" class="space-y-3">
+                            <!-- Options go here -->
+                        </div>
+                    </div>
+
+                    <!-- View: Results Screen -->
+                    <div id="result-screen" class="hidden text-center fade-in">
+                        <div id="score-icon" class="mb-6 inline-block p-4 rounded-full bg-green-50 text-green-600">
+                            <!-- Icon injected by JS -->
+                        </div>
+                        
+                        <h2 class="text-3xl font-black text-gray-900 mb-2">Tu Nivel: <span id="level-title" class="text-blue-600">Calculando...</span></h2>
+                        <p class="text-gray-500 font-semibold mb-6">Puntuación: <span id="final-score">0</span>/10</p>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg text-left mb-8 border border-gray-200">
+                            <h4 class="font-bold text-gray-900 mb-2">Análisis de Adopción:</h4>
+                            <p id="level-description" class="text-gray-700 leading-relaxed">
+                                <!-- Description goes here -->
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-4 justify-center">
+                            <button onclick="location.reload()" class="border border-gray-300 text-gray-600 hover:bg-gray-50 font-semibold py-3 px-6 rounded-lg transition duration-300">
+                                Repetir Test
+                            </button>
+                            <a href="https://pealcala.github.io/brochure/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg">
+                                Solicitar Consultoría
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 <a href="https://www.linkedin.com/in/pedro-daniel-alcala-rojas/" target="_blank" rel="noopener noreferrer" class="font-bold hover:text-blue-400 transition duration-300">Pedro D. Alcalá R.</a> - Consultoría Estratégica.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. BANCO DE PREGUNTAS (20 Items) ---
+        // Categorías: Conceptos, Prompt Engineering, Ética/Seguridad, Aplicación de Negocio.
+        const questionBank = [
+            {
+                id: 1,
+                topic: "Conceptos Básicos",
+                text: "En el contexto de la IA Generativa, ¿qué es una 'alucinación'?",
+                options: [
+                    "Cuando la IA genera una imagen surrealista.",
+                    "Cuando el modelo responde con información falsa o inventada presentada como un hecho cierto.",
+                    "Un error de conexión con el servidor de OpenAI.",
+                    "La capacidad de la IA de predecir el futuro del mercado bursátil."
+                ],
+                correct: 1
+            },
+            {
+                id: 2,
+                topic: "Prompt Engineering",
+                text: "Deseas que ChatGPT actúe como un experto en marketing. ¿Qué técnica de prompting es la más adecuada para iniciar?",
+                options: [
+                    "Zero-shot prompting (preguntar directamente).",
+                    "Persona Pattern (Asignación de Rol: 'Actúa como...').",
+                    "Chain of Thought (Pedirle que piense paso a paso).",
+                    "Few-shot prompting (Darle pocos ejemplos)."
+                ],
+                correct: 1
+            },
+            {
+                id: 3,
+                topic: "Seguridad de Datos",
+                text: "Estás trabajando con datos financieros confidenciales de tu empresa. ¿Cuál es la práctica correcta al usar una IA pública gratuita?",
+                options: [
+                    "Copiar y pegar los datos pidiendo confidencialidad en el prompt.",
+                    "Usar un pseudónimo para la empresa pero dejar los números reales.",
+                    "Nunca introducir datos sensibles o PII (Información de Identificación Personal) en modelos públicos no empresariales.",
+                    "Subir el Excel completo para que la IA lo analice más rápido."
+                ],
+                correct: 2
+            },
+            {
+                id: 4,
+                topic: "Aplicación de Negocio",
+                text: "¿Cuál es la principal diferencia funcional entre Copilot para Microsoft 365 y la versión gratuita de ChatGPT?",
+                options: [
+                    "Copilot es más creativo escribiendo poemas.",
+                    "Copilot está integrado en tu entorno de trabajo (Word, Excel, Teams) y accede a tus datos corporativos de forma segura (Microsoft Graph).",
+                    "ChatGPT gratuito tiene acceso a internet en tiempo real y Copilot no.",
+                    "No hay ninguna diferencia, son el mismo modelo."
+                ],
+                correct: 1
+            },
+            {
+                id: 5,
+                topic: "Conceptos Técnicos",
+                text: "¿Qué significa 'Context Window' (Ventana de Contexto) en un LLM?",
+                options: [
+                    "La ventana emergente del chat en la web.",
+                    "La cantidad de texto (tokens) que el modelo puede recordar y procesar en una sola conversación.",
+                    "El contexto cultural del país donde se creó la IA.",
+                    "El tiempo que tarda la IA en responder."
+                ],
+                correct: 1
+            },
+            {
+                id: 6,
+                topic: "Prompt Engineering",
+                text: "Para obtener mejores resultados complejos, ¿qué es preferible?",
+                options: [
+                    "Escribir un solo prompt gigante con todas las instrucciones mezcladas.",
+                    "Usar un enfoque iterativo: dividir la tarea en pasos y refinar el prompt basándose en la respuesta anterior.",
+                    "Repetir la misma pregunta varias veces hasta que acierte.",
+                    "Escribir en mayúsculas para que la IA entienda que es urgente."
+                ],
+                correct: 1
+            },
+            {
+                id: 7,
+                topic: "Herramientas",
+                text: "¿Para qué tarea específica destacarías el uso de 'Code Interpreter' o 'Data Analysis' en ChatGPT/Gemini?",
+                options: [
+                    "Para traducir textos al francés.",
+                    "Para generar imágenes de gatos.",
+                    "Para cargar archivos (CSV, Excel), ejecutar código Python real y generar gráficos o análisis estadísticos.",
+                    "Para buscar noticias de última hora."
+                ],
+                correct: 2
+            },
+            {
+                id: 8,
+                topic: "Limitaciones",
+                text: "Si le pides a una IA generativa que cite jurisprudencia o artículos científicos específicos, ¿qué riesgo corres?",
+                options: [
+                    "Que la IA se niegue a responder.",
+                    "Que invente referencias que parecen reales pero no existen.",
+                    "Que te cobre por la información.",
+                    "Ninguno, las IAs tienen acceso a todas las bibliotecas del mundo."
+                ],
+                correct: 1
+            },
+            {
+                id: 9,
+                topic: "Adopción Estratégica",
+                text: "Según el modelo de adopción, ¿cuál es el primer paso para integrar IA en un equipo?",
+                options: [
+                    "Comprar la licencia más cara para todos.",
+                    "Identificar casos de uso claros donde la IA aporte valor real (ahorro de tiempo, creatividad, análisis).",
+                    "Prohibir su uso para evitar riesgos.",
+                    "Reemplazar a los empleados junior."
+                ],
+                correct: 1
+            },
+            {
+                id: 10,
+                topic: "Prompt Engineering",
+                text: "¿Qué es el 'Few-Shot Prompting'?",
+                options: [
+                    "Darle a la IA algunos ejemplos de (Pregunta -> Respuesta ideal) dentro del prompt para guiar su estilo y lógica.",
+                    "Hacer pocas preguntas para ahorrar créditos.",
+                    "Disparar preguntas rápidas sin contexto.",
+                    "Usar la IA pocas veces a la semana."
+                ],
+                correct: 0
+            },
+            {
+                id: 11,
+                topic: "Ética",
+                text: "¿Quién es el responsable final del contenido generado por una IA en un informe profesional?",
+                options: [
+                    "La empresa desarrolladora de la IA (OpenAI, Google, Microsoft).",
+                    "La IA misma.",
+                    "El profesional humano que revisa, valida y utiliza ese contenido.",
+                    "El departamento de TI."
+                ],
+                correct: 2
+            },
+            {
+                id: 12,
+                topic: "Conceptos Básicos",
+                text: "¿Qué son los 'Tokens' en el procesamiento de LLMs?",
+                options: [
+                    "Monedas virtuales para pagar el servicio.",
+                    "Unidades de texto (fragmentos de palabras) que la IA procesa. Aproximadamente 1000 tokens son 750 palabras.",
+                    "Fichas de juego.",
+                    "Los servidores donde se aloja la IA."
+                ],
+                correct: 1
+            },
+            {
+                id: 13,
+                topic: "Prompt Engineering",
+                text: "Tu prompt es: 'Escribe un reporte de ventas'. El resultado es muy genérico. ¿Qué le falta principalmente?",
+                options: [
+                    "Amabilidad (decir por favor).",
+                    "Contexto, formato deseado, audiencia objetivo y datos específicos.",
+                    "Más signos de exclamación.",
+                    "Nada, la IA no sabe de ventas."
+                ],
+                correct: 1
+            },
+            {
+                id: 14,
+                topic: "Aplicación Práctica",
+                text: "¿Cómo puede ayudar la IA Generativa en la programación (coding)?",
+                options: [
+                    "Solo sirve para escribir comentarios.",
+                    "Puede generar, explicar, depurar (debug) y refactorizar código en múltiples lenguajes.",
+                    "Compila el código directamente en el servidor.",
+                    "No sirve para programar, solo para texto."
+                ],
+                correct: 1
+            },
+            {
+                id: 15,
+                topic: "Tendencias",
+                text: "¿Qué es la 'Multimodalidad' en modelos como Gemini o GPT-4o?",
+                options: [
+                    "Que habla muchos idiomas.",
+                    "La capacidad de procesar y generar diferentes tipos de input/output simultáneamente: texto, audio, imagen y video.",
+                    "Que tiene múltiples modos de personalidad.",
+                    "Que se puede usar en móvil y PC."
+                ],
+                correct: 1
+            },
+            {
+                id: 16,
+                topic: "Verificación",
+                text: "¿Cuál es la mejor mentalidad al trabajar con IA Generativa?",
+                options: [
+                    "Confianza ciega: la máquina es más lista.",
+                    "Copiloto inteligente: La IA propone, el humano verifica y decide.",
+                    "Escepticismo total: no usarla porque falla.",
+                    "Delegación total: dejar que haga el trabajo sin supervisión."
+                ],
+                correct: 1
+            },
+            {
+                id: 17,
+                topic: "Temperatura",
+                text: "En la configuración de una API de IA, ¿qué controla el parámetro 'Temperature'?",
+                options: [
+                    "El calor de los servidores.",
+                    "El nivel de creatividad vs. determinismo. (Alta = más creativa/aleatoria, Baja = más precisa/conservadora).",
+                    "La velocidad de respuesta.",
+                    "El tono de voz (enojado o feliz)."
+                ],
+                correct: 1
+            },
+            {
+                id: 18,
+                topic: "Privacidad",
+                text: "Si usas la opción 'Opt-out' de entrenamiento de datos en la configuración de ChatGPT, ¿qué sucede?",
+                options: [
+                    "Tus chats ya no se usan para entrenar futuras versiones del modelo.",
+                    "La IA deja de funcionar.",
+                    "Te cobran más dinero.",
+                    "Borra tu cuenta inmediatamente."
+                ],
+                correct: 0
+            },
+            {
+                id: 19,
+                topic: "Estrategia",
+                text: "¿Qué es el 'Shadow AI' en una empresa?",
+                options: [
+                    "Una IA oscura y malvada.",
+                    "El uso no autorizado o no supervisado de herramientas de IA por parte de los empleados sin conocimiento del departamento de TI.",
+                    "Una IA que trabaja de noche.",
+                    "El modo oscuro de la interfaz."
+                ],
+                correct: 1
+            },
+            {
+                id: 20,
+                topic: "Futuro del Trabajo",
+                text: "Según expertos, la IA no reemplazará a los humanos, sino que...",
+                options: [
+                    "Los humanos que usen IA reemplazarán a los que no la usen.",
+                    "Las máquinas tomarán el control total en 2026.",
+                    "Volveremos a trabajar con papel y lápiz.",
+                    "La IA desaparecerá pronto."
+                ],
+                correct: 0
+            }
+        ];
+
+        // --- 2. LOGICA DEL TEST ---
+
+        let currentQuestions = [];
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        // Selección aleatoria de preguntas (Fisher-Yates Shuffle simplificado)
+        function getRandomQuestions(allQuestions, count) {
+            const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+
+        function startQuiz() {
+            score = 0;
+            currentQuestionIndex = 0;
+            // Seleccionar 10 preguntas aleatorias de las 20 disponibles
+            currentQuestions = getRandomQuestions(questionBank, 10);
+            
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('question-screen').classList.remove('hidden');
+            document.getElementById('result-screen').classList.add('hidden');
+            
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = currentQuestions[currentQuestionIndex];
+            
+            // Actualizar UI
+            document.getElementById('question-counter').innerText = `Pregunta ${currentQuestionIndex + 1}/10`;
+            document.getElementById('topic-tag').innerText = q.topic;
+            document.getElementById('question-text').innerText = q.text;
+            
+            // Barra de progreso
+            const progress = ((currentQuestionIndex) / 10) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+
+            // Generar opciones
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            // Mezclar opciones para que no siempre la respuesta correcta esté en la misma posición visual
+            // (Nota: el índice 'correct' en el objeto original apunta al string correcto, no a la posición visual)
+            // Para simplificar, mantenemos el orden pero mapeamos el índice.
+            
+            q.options.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.className = "option-btn w-full text-left p-4 rounded-lg border border-gray-200 hover:border-blue-400 hover:bg-blue-50 transition duration-200 text-gray-700 font-medium";
+                btn.innerText = opt;
+                btn.onclick = () => selectAnswer(index, q.correct, btn);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectAnswer(selectedIndex, correctIndex, btnElement) {
+            // Deshabilitar todos los botones
+            const buttons = document.querySelectorAll('.option-btn');
+            buttons.forEach(b => b.disabled = true);
+
+            if (selectedIndex === correctIndex) {
+                score++;
+                btnElement.classList.remove('border-gray-200', 'hover:border-blue-400', 'hover:bg-blue-50');
+                btnElement.classList.add('bg-green-100', 'border-green-500', 'text-green-800');
+            } else {
+                btnElement.classList.remove('border-gray-200', 'hover:border-blue-400', 'hover:bg-blue-50');
+                btnElement.classList.add('bg-red-100', 'border-red-500', 'text-red-800');
+                
+                // Mostrar la correcta
+                buttons[correctIndex].classList.add('bg-green-100', 'border-green-500', 'text-green-800');
+            }
+
+            // Esperar un poco y pasar a la siguiente
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < 10) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            }, 1200);
+        }
+
+        function showResults() {
+            document.getElementById('question-screen').classList.add('hidden');
+            document.getElementById('result-screen').classList.remove('hidden');
+            
+            // Llenar barra al 100%
+            document.getElementById('progress-bar').style.width = '100%';
+
+            const titleEl = document.getElementById('level-title');
+            const descEl = document.getElementById('level-description');
+            const iconEl = document.getElementById('score-icon');
+            const finalScoreEl = document.getElementById('final-score');
+            
+            finalScoreEl.innerText = score;
+
+            let levelData = {};
+
+            // Lógica de Niveles
+            if (score <= 4) {
+                levelData = {
+                    title: "Explorador Curioso",
+                    color: "text-yellow-600",
+                    desc: "Estás en la etapa de <strong>Conciencia</strong> (Awareness). Entiendes que la IA existe y es importante, pero aún te faltan fundamentos técnicos y prácticos para aplicarla con seguridad. <br><br><strong>Recomendación:</strong> Comienza por dominar los fundamentos del Prompting y los riesgos básicos de seguridad.",
+                    icon: `<svg class="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`
+                };
+            } else if (score <= 7) {
+                levelData = {
+                    title: "Usuario Práctico",
+                    color: "text-blue-600",
+                    desc: "Te encuentras en la etapa de <strong>Conocimiento</strong> y <strong>Habilidad</strong>. Ya usas estas herramientas y obtienes valor de ellas, pero es probable que no estés explotando todo su potencial (contexto avanzado, iteración, análisis de datos). <br><br><strong>Recomendación:</strong> Profundiza en técnicas de 'Chain of Thought' y empieza a integrar la IA en flujos de trabajo complejos.",
+                    icon: `<svg class="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`
+                };
+            } else {
+                levelData = {
+                    title: "Estratega de IA",
+                    color: "text-green-600",
+                    desc: "¡Excelente! Estás en la etapa de <strong>Refuerzo</strong> y adopción avanzada. Entiendes no solo cómo usar la herramienta, sino sus limitaciones, ética y cómo integrarla estratégicamente en el negocio. Tienes el perfil ideal para liderar la adopción en tu equipo.<br><br><strong>Recomendación:</strong> Enfócate en la automatización y creación de agentes personalizados.",
+                    icon: `<svg class="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`
+                };
+            }
+
+            titleEl.innerHTML = levelData.title;
+            titleEl.className = `font-black ${levelData.color}`;
+            descEl.innerHTML = levelData.desc;
+            iconEl.innerHTML = levelData.icon;
+            iconEl.className = `mb-6 inline-block p-4 rounded-full bg-gray-50 ${levelData.color}`;
+        }
+
+        // --- Menú Móvil (Copiado del Index) ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
